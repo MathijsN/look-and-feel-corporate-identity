@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Cinzel";
+  src: url("../assets/fonts/Cinzel-VariableFont_wght.ttf");
+}
+
+*,*::before,*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-primary: #002646;
+    --color-secondary: #fff;
+    --color-accent: #d8b66a;
+
+    --padding-inline-s: calc(var(--padding-inline-m) / 2);
+    --padding-inline-m: 1.875rem;
+
+    --margin-block-s: calc(var(--margin-block-m) / 2);
+    --margin-block-m: 1.875rem;
+
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-primary);
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: Cinzel;
+
+    @media (width > 900px) {
+        font-size: 4rem;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+
+a {
+    display: grid;
+    width: max-content;
+    grid-template-columns: max-content min-content;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 100px;
+    border: 0;
+    
+    font-size: 1rem;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+    &.primary {
+        background-color: var(--color-primary);
+        color: var(--color-secondary);
+
+        &:hover {
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+
+            path {
+                stroke: var(--color-primary);
+            }
+        }
+    }
+
+    &.secondary {
+        background-color: var(--color-secondary);
+        border: 1px solid var(--color-primary);
+
+        &:hover {
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+
+            path {
+                stroke:var(--color-secondary)
+            }
+        }
+    }
+
+    &:hover {
+        scale: 1.05;
+    }
+}
