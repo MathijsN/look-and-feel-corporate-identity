@@ -48,6 +48,8 @@ h2 {
 
 h3 {
     font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 p {
@@ -64,6 +66,7 @@ a {
 
     display: grid;
     grid-template-columns: max-content min-content;
+    place-items: center;
     gap: 0.5rem;
 
     &.nav-link {
