@@ -1,126 +1,183 @@
-@font-face {
-    font-family: "Cinzel";
-    src: url("../assets/fonts/Cinzel-VariableFont_wght.ttf");
-}
+/* We gebruiken hier Cascade layers, wat mogelijke problemen met Specificiteit voorkomt
+   https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers
+   https://css-tricks.com/css-cascade-layers/ */
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@layer styleguide {
 
-:root {
-    --color-primary: #002646;
-    --color-secondary: #fff;
-    --color-accent: #d8b66a;
-
-    /* 30px */
-    --spacing-s: calc(var(--spacing-m) / 2); 
-    /* 15px */
-    --spacing-m: 1.875rem;
-
-    --animation-duration: 0.3s;
-
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--color-primary);
-    padding-inline: var(--spacing-m);
-}
-
-h1 {
-    font-size: 3rem;
-    font-family: Cinzel;
-
-    @media (width > 900px) {
-        font-size: 4rem;
+    @font-face {
+        font-family: "Cinzel";
+        src: url("assets/fonts/Cinzel-VariableFont_wght.ttf");
     }
-}
 
-h2 {
-    font-size: 2rem;
-    text-transform: uppercase;
-    font-weight: 400;
-}
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 
-h3 {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: 400;
-}
+    :root {
+        --color-primary: #002646;
+        --color-secondary: #fff;
+        --color-accent: #d8b66a;
 
-p {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.4;
-}
+        --spacing-s: calc(var(--spacing-m) / 2);
+        --spacing-m: 1.8rem;
 
 
-a {
-    font-size: 1rem;
-    text-decoration: none;
-    color: var(--color-primary);
+        --animation-duration: 0.3s;
 
-    display: grid;
-    grid-template-columns: max-content min-content;
-    place-items: center;
-    gap: 0.5rem;
+        --font-size-xxl: 4rem;
+        --font-size-xl: 3rem;
+        --font-size-l: 2rem;
+        --font-size-m: 1.5rem;
+        --font-size-s: 1rem;
 
-    &.nav-link {
+        --breakpoint-desktop: 900px;
+    }
 
-       svg {
-            rotate: 90deg;
-            transition: all var(--animation-duration) ease;
-        }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--color-primary);
+        padding-inline: var(--spacing-s);
 
-        &:hover {
-            svg {
-            rotate: -90deg;
-        }
+        @media (width > 900px) {
+        padding-inline: var(--spacing-m);
         }
     }
 
-    &.button {
-        width: max-content;
-        padding: 1rem;
-        border-radius: 100px;
-        border: 0;
-        gap: 1.5rem;
+    h1 {
+        font-size: var(--font-size-xl);
+        font-family: "Cinzel";
+
+        @media (width > 900px) {
+            font-size: var(--font-size-xxl);
+        }
+    }
+
+    h2 {
+        font-size: var(--font-size-l);
+    }
+
+    h3 {
+        font-size: var(--font-size-m);
+    }
+
+    p {
+        font-size: var(--font-size-s);
+        line-height: 1.4;
+    }
+
+    h2,
+    h3,
+    p {
+        font-weight: 400;
         margin-block: var(--spacing-s);
+    }
 
-        transition: all var(--animation-duration) ease;
+    h2,
+    h3 {
+        text-transform: uppercase;
+    }
 
-        &:hover {
-            scale: 1.05;
+    section {
+        margin-block: var(--spacing-m);
+
+        &.styleguide-section {
+
+            &.flex-styleguide {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .color-visual {
+                width: 150px;
+                aspect-ratio: 1/1;
+                display: grid;
+                place-content: center;
+                border-radius: 100%;
+
+                &.primary-color {
+                    background-color: var(--color-primary);
+                    color: var(--color-secondary);
+                }
+
+                &.secondary-color {
+                    background-color: var(--color-secondary);
+                    border: 1px solid var(--color-primary);
+                }
+
+                &.accent-color {
+                    background-color: var(--color-accent);
+                }
+            }
         }
+    }
 
-        &.primary {
-            background-color: var(--color-primary);
-            color: var(--color-secondary);
+    a {
+        font-size: var(--font-size-s);
+        text-decoration: none;
+        color: var(--color-primary);
+
+        display: grid;
+        grid-template-columns: max-content min-content;
+        place-items: center;
+        gap: 0.5rem;
+
+        &.nav-link {
+
+            svg {
+                rotate: 90deg;
+                transition: all var(--animation-duration) ease;
+            }
 
             &:hover {
-                background-color: var(--color-accent);
-                color: var(--color-primary);
-
-                path {
-                    stroke: var(--color-primary);
+                svg {
+                    rotate: -90deg;
                 }
             }
         }
 
-        &.secondary {
-            background-color: var(--color-secondary);
-            border: 1px solid var(--color-primary);
+        &.button {
+            width: max-content;
+            padding: 1rem;
+            border-radius: 100px;
+            border: 0;
+            gap: 1.5rem;
+            margin-block: var(--spacing-s);
+
+            transition: all var(--animation-duration) ease;
 
             &:hover {
+                scale: 1.05;
+            }
+
+            &.primary {
                 background-color: var(--color-primary);
                 color: var(--color-secondary);
 
-                path {
-                    stroke: var(--color-secondary)
+                &:hover {
+                    background-color: var(--color-accent);
+                    color: var(--color-primary);
+
+                    path {
+                        stroke: var(--color-primary);
+                    }
+                }
+            }
+
+            &.secondary {
+                background-color: var(--color-secondary);
+                border: 1px solid var(--color-primary);
+
+                &:hover {
+                    background-color: var(--color-primary);
+                    color: var(--color-secondary);
+
+                    path {
+                        stroke: var(--color-secondary)
+                    }
                 }
             }
         }
