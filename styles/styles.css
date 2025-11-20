@@ -106,6 +106,7 @@ section.about-us {
     overflow-y: hidden;
     overflow-x: scroll;
     padding-left: var(--spacing-s);
+    scrollbar-width: none;
 
     article {
         background-color: blue;
