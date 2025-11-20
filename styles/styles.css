@@ -1,9 +1,21 @@
+body {
+    height: 300vh;
+}
+
 header {
     background-color: var(--color-primary);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
 }
 
 article {
     margin-top: var(--spacing-s);
+}
+
+h1 {
+    font-weight: 300;
 }
 
 nav {
@@ -24,6 +36,27 @@ nav {
     button {
         background: none;
         border: none;
+    }
+}
+
+section.hero {
+    background-image: url("../assets/img/heroImg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--color-secondary);
+    display: grid;
+
+    height: 100vh;
+    padding: 10rem var(--spacing-s) var(--spacing-m);
+    margin: 0;
+
+    display: grid;
+    grid-template-rows: min-content 1fr min-content min-content min-content min-content min-content;
+    align-items: end;
+
+    p {
+        margin: 0;
     }
 }
 
