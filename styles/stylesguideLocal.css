@@ -21,6 +21,8 @@
         --color-primary: #002646;
         --color-secondary: #fff;
         --color-accent: #d8b66a;
+        --color-inactive: #E9E9E9;
+        --color-inactive-dark: #6E6E6E;
 
         --spacing-s: calc(var(--spacing-m) / 2);
         --spacing-m: 1.8rem;
@@ -33,8 +35,6 @@
         --font-size-l: 2rem;
         --font-size-m: 1.5rem;
         --font-size-s: 1rem;
-
-        --breakpoint-desktop: 900px;
     }
 
     body {
@@ -43,7 +43,7 @@
         padding-inline: var(--spacing-s);
 
         @media (width > 900px) {
-        padding-inline: var(--spacing-m);
+            padding-inline: var(--spacing-m);
         }
     }
 
@@ -111,6 +111,15 @@
                 &.accent-color {
                     background-color: var(--color-accent);
                 }
+
+                &.inactive-color {
+                    background-color: var(--color-inactive);
+                }
+
+                &.inactive-color-dark {
+                    background-color: var(--color-inactive-dark);
+                    color: var(--color-secondary);
+                }
             }
         }
     }
@@ -125,16 +134,53 @@
         place-items: center;
         gap: 0.5rem;
 
+        width: max-content;
+
         &.nav-link {
+            color: var(--color-secondary);
+
+            &.dark-bg {
+                background-color: var(--color-primary);
+                padding: var(--spacing-s);
+            }
 
             svg {
                 rotate: 90deg;
-                transition: all var(--animation-duration) ease;
+
+                @media (prefers-reduced-motion: no-preference) {
+                    transition: all var(--animation-duration) ease;
+                }
+
+                path {
+                    stroke: var(--color-secondary);
+                }
             }
 
-            &:hover {
-                svg {
-                    rotate: -90deg;
+            @media (any-pointer: fine) {
+
+                &:hover {
+                    svg {
+                        rotate: -90deg;
+                    }
+                }
+            }
+        }
+
+        &.body-link {
+
+            svg {
+                @media (prefers-reduced-motion: no-preference) {
+                    transition: all var(--animation-duration) ease;
+                }
+            }
+
+            @media (any-pointer: fine) {
+
+                &:hover {
+
+                    svg {
+                        translate: 1rem 0;
+                    }
                 }
             }
         }
@@ -147,22 +193,31 @@
             gap: 1.5rem;
             margin-block: var(--spacing-s);
 
-            transition: all var(--animation-duration) ease;
 
-            &:hover {
-                scale: 1.05;
+            @media (prefers-reduced-motion: no-preference) {
+                transition: all var(--animation-duration) ease;
             }
+
+            @media (any-pointer: fine) {
+                &:hover {
+                    scale: 1.05;
+                }
+            }
+
 
             &.primary {
                 background-color: var(--color-primary);
                 color: var(--color-secondary);
 
-                &:hover {
-                    background-color: var(--color-accent);
-                    color: var(--color-primary);
+                @media (any-pointer: fine) {
 
-                    path {
-                        stroke: var(--color-primary);
+                    &:hover {
+                        background-color: var(--color-accent);
+                        color: var(--color-primary);
+
+                        path {
+                            stroke: var(--color-primary);
+                        }
                     }
                 }
             }
@@ -171,13 +226,38 @@
                 background-color: var(--color-secondary);
                 border: 1px solid var(--color-primary);
 
-                &:hover {
-                    background-color: var(--color-primary);
-                    color: var(--color-secondary);
+                @media (any-pointer: fine) {
 
-                    path {
-                        stroke: var(--color-secondary)
+                    &:hover {
+                        background-color: var(--color-primary);
+                        color: var(--color-secondary);
+
+                        path {
+                            stroke: var(--color-secondary)
+                        }
                     }
+                }
+
+            }
+        }
+    }
+
+    form {
+        label {
+            display: flex;
+            gap: 1rem;
+            margin-block: var(--spacing-s);
+
+            input[type="text"],
+            input[type="email"] {
+                width: 100%;
+                outline: none;
+                border-inline: none;
+                border-top: none;
+                border-bottom: 1px solid var(--color-primary);
+
+                @media (width > 900px) {
+                    width: unset;
                 }
             }
         }

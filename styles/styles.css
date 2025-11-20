@@ -7,5 +7,17 @@ nav {
     gap: 3rem;
     align-self: center;
     justify-self: center;
-    justify-content: center;
+    justify-content: right;
+    width: 100%;
+    padding: var(--spacing-s);
+
+
+    .nav-link, .button {
+        display: none;
+    }
+
+    button {
+        background: none;
+        border: none;
+    }
 }
