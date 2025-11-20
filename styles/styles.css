@@ -18,6 +18,10 @@ h1 {
     font-weight: 300;
 }
 
+h2 {
+    padding-inline: var(--spacing-s);
+}
+
 nav {
     display: flex;
     gap: 3rem;
@@ -62,44 +66,77 @@ section.hero {
 
 
 section.tentoonstellingen {
+
+    a {
+        padding-inline: var(--spacing-s);
+    }
+
     article {
-        border: 1px solid var(--color-inactive);
+        height: 80vh;
+        background-image: url(../assets/img/tentoonstelling1.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-content: end;
+        padding-bottom: var(--spacing-m);
 
-        img {
-            width: 100%;
-            aspect-ratio: 2/1;
-            object-fit: cover;
-
-            @media (width > 800px) {
-                aspect-ratio: 3/1;
-            }
-
-            @media (width > 1400px) {
-                aspect-ratio: 4/1;
-            }
+        p,
+        a {
+            padding-inline: var(--spacing-s);
+            width: 20rem;
+            color: var(--color-secondary);
         }
 
-        div {
-            padding: 0 var(--spacing-s) var(--spacing-s);
-
-
-            @media (width > 800px) {
-                display: grid;
-                grid-template-columns: repeat(1fr max-content);
-                padding-bottom: 0;
+        svg {
+            path {
+                stroke: var(--color-secondary);
             }
+        }
+    }
+}
 
-            p:nth-of-type(2) {
-                grid-row: 2/3;
-            }
 
-            a {
-                @media (width > 800px) {
-                    grid-column: 2/3;
-                    grid-row: 2/3;
-                    justify-self: end;
+section.about-us {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    gap: var(--spacing-s);
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding-left: var(--spacing-s);
+
+    article {
+        background-color: blue;
+        min-width: 18rem;
+        aspect-ratio: 1/1;
+
+        padding: var(--spacing-s);
+        border-radius: 16px;
+
+        color: var(--color-secondary);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+            color: var(--color-secondary);
+
+            svg {
+                path {
+                    stroke: var(--color-secondary);
                 }
             }
         }
+
+        &:nth-of-type(1) {
+            background-image: url(../assets/img/About1.png);
+        }
+
+        &:nth-of-type(2) {
+            background-image: url(../assets/img/About2.png);
+        }
+        &:nth-of-type(3) {
+            background-image: url(../assets/img/About3.png);
+        }
+
     }
 }
