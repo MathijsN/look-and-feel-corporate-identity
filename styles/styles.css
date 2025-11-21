@@ -1,6 +1,6 @@
-body {
+/* body {
     height: 300vh;
-}
+} */
 
 header {
     background-color: var(--color-primary);
@@ -144,4 +144,9 @@ section.about-us {
         }
 
     }
+}
+
+
+section.form {
+    margin-top: calc(var(--spacing-m) * 3);
 }
