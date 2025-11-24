@@ -1,10 +1,8 @@
-const spin = document.getElementById('spin')
+const header = document.querySelector('header')
+const menuIcon = document.querySelector('.menu-icon')
 
-spin.addEventListener('command', function(ev) {
-    if (ev.command == '--step-up') {
-        spin.stepUp();
-    } else {
-        spin.stepDown();
-    }
-});
 
+menuIcon.addEventListener('click', function() {
+    header.classList.toggle('open')
+    console.log('clicked')
+})
