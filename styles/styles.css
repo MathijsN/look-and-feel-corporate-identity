@@ -114,23 +114,12 @@ section.about-us {
         aspect-ratio: 1/1;
 
         padding: var(--spacing-s);
-        border-radius: 16px;
 
         color: var(--color-secondary);
 
         display: flex;
         flex-direction: column;
         justify-content: center;
-
-        a {
-            color: var(--color-secondary);
-
-            svg {
-                path {
-                    stroke: var(--color-secondary);
-                }
-            }
-        }
 
         &:nth-of-type(1) {
             background-image: url(../assets/img/About1.png);
