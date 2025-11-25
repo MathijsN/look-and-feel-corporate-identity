@@ -8,6 +8,7 @@ header {
     left: 0;
     right: 0;
     top: 0;
+    z-index: 10;
 
     nav {
         display: flex;
@@ -65,7 +66,6 @@ header {
         inset: 0;
         background-color: var(--color-primary);
         height: 100vh;
-        z-index: 10;
 
         nav {
             place-content: center;
@@ -198,8 +198,9 @@ section.about-us {
         gap: var(--spacing-s);
         overflow-y: hidden;
         overflow-x: scroll;
-        padding-left: var(--spacing-s);
+        padding-inline: var(--spacing-s);
         scrollbar-width: none;
+
 
         article {
             background-color: blue;
@@ -248,6 +249,7 @@ section.plan-your-visit {
                 grid-column: 1/2;
                 grid-row: 1/2;
             }
+
             span:nth-of-type(2) {
                 grid-column: 1/2;
                 grid-row: 2/3;
@@ -261,10 +263,10 @@ section.plan-your-visit {
                 transition: all var(--animation-duration);
 
                 @media (any-pointer: fine) {
-                &:hover {
-                    scale: 1.05;
+                    &:hover {
+                        scale: 1.05;
+                    }
                 }
-            }
             }
         }
 
@@ -281,13 +283,13 @@ section.plan-your-visit {
             transition: all var(--animation-duration);
 
             &::after {
-            content: '';
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8l-7 7M12 8l7 7'/%3E%3C/svg%3E");
-            width: 1.2em;
-            height: 1.2em;
-            background-size: 100% 100%;
-            display: block;
-            transform: rotate(90deg);
+                content: '';
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8l-7 7M12 8l7 7'/%3E%3C/svg%3E");
+                width: 1.2em;
+                height: 1.2em;
+                background-size: 100% 100%;
+                display: block;
+                transform: rotate(90deg);
             }
 
             @media (any-pointer: fine) {
