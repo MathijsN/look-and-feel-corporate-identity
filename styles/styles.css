@@ -4,7 +4,7 @@
 
 header {
     background-color: var(--color-primary);
-    position: fixed;
+    position: sticky;
     left: 0;
     right: 0;
     top: 0;
@@ -60,9 +60,11 @@ header {
 }
 
     &.open {
-        position: absolute;
+        position: sticky;
         inset: 0;
         background-color: var(--color-primary);
+        height: 100vh;
+        z-index: 10;
 
         nav {
             place-content: center;
@@ -161,6 +163,10 @@ section.tentoonstellingen {
         background-size: cover;
         align-content: end;
         padding-bottom: var(--spacing-m);
+
+        @media (width > 799px) {
+        /* background-image: url("../assets/img/tentoonstellingTablet.png"); */
+        }
 
         p,
         a {
