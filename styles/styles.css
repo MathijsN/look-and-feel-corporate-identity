@@ -11,7 +11,7 @@ header {
 
     nav {
     display: flex;
-    gap: 3rem;
+    gap: 1.5rem;
     align-items: center;
     justify-content: right;
     width: 100%;
@@ -35,15 +35,21 @@ header {
 
         @media (width > 799px) {
             display: flex;
+        }
+    }
 
+    .button {
+
+        @media (width > 799px) {
+            
             &:hover {
-                background-color: var(--color-accent);
-                color: var(--color-primary);
-                
-                &::after {
-                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23002544' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8l-7 7M12 8l7 7'/%3E%3C/svg%3E");
+                    background-color: var(--color-accent);
+                    color: var(--color-primary);
+                    
+                    &::after {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23002544' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8l-7 7M12 8l7 7'/%3E%3C/svg%3E");
+                    }
                 }
-            }
         }
     }
 
@@ -124,6 +130,13 @@ section.hero {
     display: grid;
     grid-template-rows: min-content 1fr min-content min-content min-content min-content min-content;
     align-items: end;
+
+    @media (width > 799px) {
+        grid-template-rows: repeat(7, min-content);
+        align-content: end;
+
+        background-image: url("../assets/img/backgroundImgTablet.png");
+        }
 
     p {
         margin: 0;
