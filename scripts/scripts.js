@@ -5,5 +5,12 @@ const menuTitle = document.querySelector('.menu-title')
 
 menuIcon.addEventListener('click', function() {
     header.classList.toggle('open')
-    menuTitle.textContent = "Close menu"
+
+    // menuTitle.textContent.toggle = menuTitle.dataset.toggle-text
+
+    if (header.classList.contains('open')) {
+        menuTitle.textContent = "Close menu"
+    } else {
+        menuTitle.textContent = "Open menu"
+    }
 })
