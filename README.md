@@ -25,7 +25,7 @@ Naar aanleiding van de feedback van de vorige sprint was mijn focus deze sprint 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
 
-Wij hebben met CSS een styleguide gemaakt waarbij alles opbouwend met classes is. Dus een `<a>` heeft basis stijling, als je hierop een bepaalde class zet krijgt het weer een stijling er boven op en zo voor. De styleguide kan je [hier](https://github.com/Kurollos/look-and-feel-styleguide) vinden.
+Wij hebben met CSS een styleguide gemaakt waarbij alles opbouwend met classes is. Dus een `<a>` heeft basis stijling, als je hierop een bepaalde class zet krijgt het weer een stijling er boven op en zo voort. De styleguide kan je [hier](https://github.com/Kurollos/look-and-feel-styleguide) vinden.
 
 HTML heb ik gebruikt voor de structuur van de website.
 
