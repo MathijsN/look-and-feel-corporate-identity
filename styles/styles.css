@@ -368,6 +368,7 @@ section.plan-your-visit {
             display: flex;
             gap: 1.5rem;
             font-size: var(--font-size-s);
+            font-weight: 300;
 
             transition: all var(--animation-duration);
 
