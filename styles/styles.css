@@ -18,6 +18,10 @@ header {
         width: 100%;
         padding: var(--spacing-s);
 
+        .menu-information {
+            display: none;
+        }
+
         @media (width > 799px) {
             padding-inline: var(--spacing-s);
             padding-block: 0;
@@ -72,7 +76,8 @@ header {
             place-items: center;
             display: grid;
             grid-template-columns: 1fr min-content;
-            grid-template-rows: min-content repeat(4, max-content);
+            grid-template-rows: min-content repeat(4, max-content) 1fr;
+            height: 100vh;
 
             a {
                 grid-column: span 2;
@@ -95,6 +100,43 @@ header {
                     path {
                         d: path('M6.575 7.975L1.675 12.875C1.49167 13.0583 1.25833 13.15 0.975 13.15C0.691667 13.15 0.458333 13.0583 0.275 12.875C0.0916663 12.6917 0 12.4583 0 12.175C0 11.8917 0.0916663 11.6583 0.275 11.475L5.175 6.575L0.275 1.675C0.0916663 1.49167 0 1.25833 0 0.975C0 0.691667 0.0916663 0.458333 0.275 0.275C0.458333 0.0916663 0.691667 0 0.975 0C1.25833 0 1.49167 0.0916663 1.675 0.275L6.575 5.175L11.475 0.275C11.6583 0.0916663 11.8917 0 12.175 0C12.4583 0 12.6917 0.0916663 12.875 0.275C13.0583 0.458333 13.15 0.691667 13.15 0.975C13.15 1.25833 13.0583 1.49167 12.875 1.675L7.975 6.575L12.875 11.475C13.0583 11.6583 13.15 11.8917 13.15 12.175C13.15 12.4583 13.0583 12.6917 12.875 12.875C12.6917 13.0583 12.4583 13.15 12.175 13.15C11.8917 13.15 11.6583 13.0583 11.475 12.875L6.575 7.975Z');
                     }
+                }
+            }
+
+            .menu-information {
+                grid-column: span 2;
+                width: 100%;
+                align-self: flex-end;
+
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4,1fr);
+                gap: 0.5rem;
+                color: var(--color-secondary);
+
+                p {
+                    margin: 0;
+                }
+
+                p:nth-of-type(1) {
+                    grid-row: 1/2;
+                    grid-column: span 2;
+                }
+                p:nth-of-type(2) {
+                    grid-row: 2/3;
+                    grid-column: span 2;
+                }
+
+                p:nth-of-type(3) {
+                    grid-row: 3/4;
+                    grid-column: span 2;
+                    text-align: right;
+                }
+
+                p:nth-of-type(4) {
+                    grid-row: 4/5;
+                    grid-column: span 2;
+                    text-align: right;
                 }
             }
 
@@ -236,14 +278,46 @@ section.about-us {
 
 
 section.plan-your-visit {
+    div.tickets-table-heading {
+        display: grid;
+        grid-template-columns: 4rem repeat(2, 1fr);
+        padding-inline: var(--spacing-s);
+
+        h4 {
+            text-align: right;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        h4:nth-of-type(1) {
+            grid-column: 2/3;
+            display: none;
+
+            @media (width > 799px) {
+                display: block;
+            }
+        }
+        h4:nth-of-type(2) {
+            grid-column: 3/4;
+            display: none;
+
+            @media (width > 799px) {
+             display: block;   
+            }
+        }
+    }
     form {
         padding-inline: var(--spacing-s);
 
         label {
             display: grid;
-            grid-template-columns: max-content 1fr;
+            grid-template-columns: min-content 1fr min-content;
             gap: 0.25rem;
             margin-block: var(--spacing-m);
+
+            @media (width > 799px) {
+                grid-template-columns: 5rem 1fr 5rem;
+            }
 
             span:nth-of-type(1) {
                 grid-column: 1/2;
@@ -254,13 +328,28 @@ section.plan-your-visit {
                 grid-column: 1/2;
                 grid-row: 2/3;
             }
+            span:nth-of-type(3) {
+                grid-row: span 2;
+                align-self: center;
+                display: none;
+
+                @media (width > 799px) {
+                    display: block;
+                    text-align: right;
+            }
+            }
 
             .ticket-amount {
                 grid-column: 2/3;
                 grid-row: span 2;
                 justify-self: end;
+                scale: 0.9;
 
                 transition: all var(--animation-duration);
+
+                @media (width > 799px) {
+                    justify-self: center;
+            }
 
                 @media (any-pointer: fine) {
                     &:hover {

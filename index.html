@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://kurollos.github.io/look-and-feel-styleguide/styleguide-embassy-free-mind.css">
     <script type="module" src="https://kurollos.github.io/look-and-feel-styleguide/scripts/script.js"></script>
-    <script type="module" src="scripts/scripts.js"></script>
+    <script type="module" src="scripts/scripts.js" defer></script>
 </head>
 
 <body>
@@ -26,6 +26,12 @@
             <a class="nav-link dark-bg" href="#">Collection</a>
             <a class="nav-link dark-bg" href="#">Stories</a>
             <a class="button secondary" href="#">Tickets</a>
+            <div class="menu-information">
+                <p>123, Keizersgracht</p>
+            <p>NL 1015 CJ Amsterdam</p>
+            <p>Wed. to Sat. 10.00-17.00h</p>
+            <p>Sun. 11.00-18.00h</p>
+            </div>
         </nav>
     </header>
     <main>
@@ -71,6 +77,10 @@
         </section>
         <section class="plan-your-visit">
             <h2>Plan your visit</h2>
+            <div class="tickets-table-heading">
+                <h4>Amount</h4>
+                <h4>Total</h4>
+            </div>
             <form action="#">
                 <label for="">
                     <span>Adult</span>
@@ -80,6 +90,7 @@
                         <input type="number" id="spin">
                         <button class="aantal-add" type="button" commandfor="spin" command="--step-up">+</button>
                     </div>
+                    <span>€30,00</span>
                 </label>
                 <label for="">
                     <span>Students</span>
@@ -89,24 +100,7 @@
                         <input type="number" id="spin">
                         <button class="aantal-add" type="button" commandfor="spin" command="--step-up">+</button>
                     </div>
-                </label>
-                <label for="">
-                    <span>Kids 0-11 years</span>
-                    <span>FREE</span>
-                    <div class="ticket-amount">
-                        <button class="aantal-min" type="button" commandfor="spin" command="--stepdown">-</button>
-                        <input type="number" id="spin">
-                        <button class="aantal-add" type="button" commandfor="spin" command="--step-up">+</button>
-                    </div>
-                </label>
-                <label for="">
-                    <span>Kids 11-18 years</span>
-                    <span>€6,00</span>
-                    <div class="ticket-amount">
-                        <button class="aantal-min" type="button" commandfor="spin" command="--stepdown">-</button>
-                        <input type="number" id="spin">
-                        <button class="aantal-add" type="button" commandfor="spin" command="--step-up">+</button>
-                    </div>
+                    <span>€0,00</span>
                 </label>
                 <button type="submit">Next step</button>
             </form>
