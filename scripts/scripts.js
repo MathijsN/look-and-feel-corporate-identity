@@ -9,8 +9,8 @@ menuIcon.addEventListener('click', function() {
     // menuTitle.textContent.toggle = menuTitle.dataset.toggle-text
 
     if (header.classList.contains('open')) {
-        menuTitle.textContent = "Close menu"
+        menuTitle.textContent = menuTitle.dataset.close
     } else {
-        menuTitle.textContent = "Open menu"
+        menuTitle.textContent = menuTitle.dataset.open
     }
 })
