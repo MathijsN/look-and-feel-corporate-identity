@@ -17,11 +17,15 @@ Dit project gaat om de look and feel. Wij hebben als groepje een styleguide gema
 
 Naar aanleiding van de feedback van de vorige sprint was mijn focus deze sprint op iteratief designen. Ik heb veel gebruik gemaakt van foto's die wij nog niet eerder hebben gebruikt en rijksmuseum als grote inspiratie bron genomen (naar aanleiding van de feedback).
 
+[De link naar de website](https://mathijsn.github.io/look-and-feel-corporate-identity/)
+
 <img width="3746" height="2160" alt="image" src="https://github.com/user-attachments/assets/beda514c-aa67-4758-bad3-7a655cd2cdb7" />
 
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+
+Wij hebben met CSS een styleguide gemaakt waarbij alles opbouwend met classes is. Dus een <a> heeft basis stijling, als je hierop een bepaalde class zet krijgt het weer een stijling er boven op en zo voor. De styleguide kan je [hier](https://github.com/Kurollos/look-and-feel-styleguide) vinden
 
 ## Bronnen
 
