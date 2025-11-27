@@ -19,6 +19,8 @@ Naar aanleiding van de feedback van de vorige sprint was mijn focus deze sprint 
 
 [De link naar de website](https://mathijsn.github.io/look-and-feel-corporate-identity/)
 
+[De link naar mijn figma bestand](https://www.figma.com/design/fQMXoFZZ3IszIP2on61u3T/Embassy-of-the-free-mind?node-id=370-6&t=y1SmtIKCU6AuioZE-1)
+
 <img width="3746" height="2160" alt="image" src="https://github.com/user-attachments/assets/beda514c-aa67-4758-bad3-7a655cd2cdb7" />
 
 
